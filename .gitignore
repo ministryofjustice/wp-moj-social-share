@@ -1,0 +1,18 @@
+# DB
+**/*.sql
+
+# Editor
+.idea
+.DS_*
+
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+vendor/*
+!vendor/.gitkeep
+meta/
