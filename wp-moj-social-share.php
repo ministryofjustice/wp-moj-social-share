@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: MOJ Share Page
+ * Plugin Name: MOJ Social Share
  * Description: Share a news page to Facebook and Twitter
  * Version: 1.0
  * License: GPL
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 
 function register_plugin_styles()
 {
-    wp_register_style('moj-share-page', plugins_url('moj-share-page/styles/moj-share-page.css'));
+    wp_register_style('moj-share-page', plugins_url('assets/css/main.css'));
     wp_enqueue_style('moj-share-page');
 }
 // Register and enqueue plugin style sheet.

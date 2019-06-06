@@ -1,0 +1,14 @@
+{
+  "name": "ministryofjustice/wp-moj-social-share",
+  "description": "A WordPress plugin that will add share buttons to pages",
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "^1.0"
+  },
+  "authors": [
+    {
+      "name": "Stephanie David",
+      "email": "stephanie.david@digital.justice.gov.uk"
+    }
+  ]
+}
