@@ -1,4 +1,4 @@
-<?php
+<<?php
 /**
  * Plugin Name: MOJ Social Share
  * Description: Share a news page to Facebook and Twitter
@@ -21,10 +21,25 @@ function register_plugin_styles()
 // Register and enqueue plugin style sheet.
 add_action('wp_enqueue_scripts', 'register_plugin_styles');
 
+function social_share_add_to_content( $content ) {
+
+   if( is_single() && ! empty( $GLOBALS['post'] ) ) {
+
+       if ( $GLOBALS['post']->ID == get_the_ID() ) {
+
+           $content .= moj_share_page();
+
+       }
+
+   }
+
+   return $content;
+}
+add_filter('the_content', 'social_share_add_to_content');
+
 function moj_share_page()
 {
-    ?>
-    <div class="responsive-bottom-margin">
+ return ' <div class="responsive-bottom-margin">
         <div class="share-page">
             <h2>Share this page</h2>
             <ul>
@@ -75,5 +90,5 @@ function moj_share_page()
                 </li>
             </ul>
         </div>
-    </div>
-<?php }
+    </div> ';
+}

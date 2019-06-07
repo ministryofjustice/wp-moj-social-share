@@ -12,6 +12,7 @@
 .share-page li {
     position: relative;
     display: inline-block;
+    list-style-type: none;
     min-height: 32px;
     margin-bottom: 10px;
     line-height: 32px;
