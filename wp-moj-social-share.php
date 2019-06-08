@@ -12,13 +12,14 @@ if (!defined('ABSPATH')) {
     exit();
 }
 
-function register_plugin_styles()
-{
-    wp_register_style('wp-moj-social-share', plugins_url('wp-moj-social-share/assets/css/main.css'));
-    wp_enqueue_style('wp-moj-social-share');
-}
 // Register and enqueue plugin style sheet.
 add_action('wp_enqueue_scripts', 'register_plugin_styles');
+
+function register_plugin_styles()
+{
+    wp_register_style('assets', plugins_url('assets/css/main.css'));
+    wp_enqueue_style('assets');
+}
 
 function social_share_add_to_content( $content ) {
 
