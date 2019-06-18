@@ -1,7 +1,7 @@
 .share-page h2 {
     font-family: inherit;
     line-height: 1.5;
-    color: #a60f51
+    color: inherit
 }
 
 .share-page ul {
@@ -30,11 +30,11 @@
 }
 
 .share-page a:link {
-    color: #a60f51
+    color: inherit
 }
 
 .share-page a:visited {
-    color: #a60f51
+    color: inherit
 }
 
 .share-page .link-icon {
