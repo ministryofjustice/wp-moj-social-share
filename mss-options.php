@@ -6,9 +6,9 @@ class MoJSocialShareOptions
 
     public function __construct()
     {
-        add_action('admin_menu', array($this, 'options_page'));
         add_action('admin_init', array($this, 'options_page_init'));
         add_action('admin_init', array($this, 'setup_fields'));
+        add_action('admin_menu', array($this, 'options_page'));
     }
 
     public function options_page()
