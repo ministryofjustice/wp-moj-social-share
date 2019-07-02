@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MOJ Social Share
  * Description: Share a news page to Facebook and Twitter
- * Version: 1.0
+ * Version: 1.1
  * License: GPL
  * Author: Stephanie David, MoJ Digital
  **/
@@ -57,7 +57,7 @@ function moj_share_page()
         <li style="position:relative;display:inline-block;list-style-type:none;min-height:32px;margin-bottom:10px;line-height:32px;margin-left:-40px">
           <a target="_blank" rel="noopener noreferrer external" style="-webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);font-weight:400;text-transform:none;line-height:1.1428571429;text-decoration:none;display:inline-block;padding-left:40px;padding-right:50px"
-            href="https://www.facebook.com/sharer/sharer.php?u=<?= get_page_link(); ?>">
+            href="https://www.facebook.com/sharer/sharer.php?u=' . urlencode(get_page_link()) . '">
             <span class="link-icon" style="position:absolute;top:0;left:0;width:32px;height:32px;vertical-align:top;right:0">
               <svg xmlns="http://www.w3.org/2000/svg"
                  width="32" height="32" style="vertical-align:middle; color:#3a559f">
@@ -77,7 +77,7 @@ function moj_share_page()
           <a target="_blank" rel="noopener noreferrer external"
             style="margin-left:-2px; -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0)"
-            href="https://twitter.com/share?url=<?= get_page_link(); ?>">
+            href="https://twitter.com/share?url=' . urlencode(get_page_link()) . '">
           <span class="link-icon">
             <svg xmlns="http://www.w3.org/2000/svg"
                width="32" height="32" style="vertical-align:middle; color:#1ab2e8">
