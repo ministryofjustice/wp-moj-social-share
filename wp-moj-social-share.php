@@ -8,13 +8,13 @@
  **/
 
 
-include_once('mss-options.php');
-$moj_social_share_options = new MoJSocialShareOptions();
-
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
     exit();
 }
+
+include_once('mss-options.php');
+$moj_social_share_options = new MoJSocialShareOptions();
 
 // Register and enqueue plugin style sheet.
 add_action('wp_enqueue_scripts', 'register_plugin_styles');
@@ -29,16 +29,18 @@ function social_share_add_to_content( $content )
 {
     global $GLOBALS;
 
-    $all_post_types = get_post_types(['public' => true]);
+    $args = array('public' => true);
+
+    $all_post_types = get_post_types($args);
     $options = [];
-    $type = get_post_type();
+    $current_post_type = get_post_type();
 
     foreach ($all_post_types as $key => $post_type) {
         $options[$key] = (int)get_option('moj-field-' . $key);
     }
 
-    if (is_single() || is_page()) {
-        if (isset($options[$type]) && $options[$type] === 1) {
+    if (is_singular()) {
+        if (isset($options[$current_post_type]) && $options[$current_post_type] === 1) {
             $content .= moj_share_page();
         }
     }
